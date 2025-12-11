@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>EuDecid - Alcool</title>
+    <link rel="stylesheet" href="Design.css">
+</head>
+
+<body class="subpage alcool">
+
+<header>
+    <h1>Dependența de alcool</h1>
+    <a class="back-btn" href="Main.html">Înapoi la pagina principală</a>
+</header>
+
+<section class="info-page">
+
+    <h2>Ce este dependența de alcool?</h2>
+    <p>
+        Alcoolul este una dintre cele mai consumate substanțe din lume, iar dependența
+        de alcool (numită și alcoolism) apare atunci când o persoană nu mai poate controla
+        cantitatea consumată. Alcoolul afectează creierul, ficatul, coordonarea, și poate
+        duce la probleme sociale și medicale grave.
+    </p>
+
+    <h3>Cum începe?</h3>
+    <p>
+        De multe ori, consumul începe ca o simplă curiozitate sau ca o formă de relaxare.
+        Însă, în timp, creierul se obișnuiește cu alcoolul și cere tot mai mult. Oamenii
+        încep să bea pentru a se simți „normali”, nu pentru plăcere.
+    </p>
+
+    <h3>Semne că cineva dezvoltă dependență</h3>
+    <ul class="highlight">
+        <li>Bea frecvent sau în situații nepotrivite</li>
+        <li>Minimizează consumul sau ascunde băuturile</li>
+        <li>Are nevoie de cantități mai mari ca să simtă efectul</li>
+        <li>Devine iritat sau neliniștit dacă nu consumă alcool</li>
+        <li>Neglijează școala, munca sau relațiile</li>
+    </ul>
+
+    <h3>Efecte asupra organismului</h3>
+    <ul class="highlight">
+        <li>Boală hepatică (ciroză, steatoză, hepatită alcoolică)</li>
+        <li>Afectarea sistemului nervos</li>
+        <li>Slăbirea sistemului imunitar</li>
+        <li>Risc crescut de cancer</li>
+        <li>Accidente, violență, pierderi de control</li>
+    </ul>
+
+    <h3>De ce e greu să te lași?</h3>
+    <p>
+        Alcoolul creează dependență fizică și psihică. Creierul este „reprogramat” să îl
+        ceară pentru a funcționa normal. De aceea, renunțarea necesită timp, sprijin și
+        uneori ajutor specializat.
+    </p>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll('a[href$=".html"]');
+
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const url = this.href;
+
+      document.body.classList.add("page-fade-out");
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 400);
+    });
+  });
+});
+</script>
+
+</body>
+</html>

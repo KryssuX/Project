@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EuDecid — Main</title>
+
+  <!-- LINK: asigură-te că acest nume e EXACT Design.css -->
+  <link rel="stylesheet" href="Design.css">
+</head>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll('a[href$=".html"]');
+
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const url = this.href;
+
+      document.body.classList.add("page-fade-out");
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 400);
+    });
+  });
+});
+</script>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>EuDecid</h1>
+      <p class="subtitle">Informații și sprijin despre dependențe</p>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+    <section class="intro-box">
+      <h2>Știi ce sunt aceste vicii?</h2>
+      <p>
+        Viciile (alcool, tutun, droguri, jocuri de noroc, dependența de internet)
+        pot afecta corpul, mintea și relațiile. Înțelegerea lor este primul pas.
+      </p>
+      <p class="lead">
+        Știi cât de greu e să te lași de ele? Da — dar există metode și oameni care pot ajuta.
+      </p>
+    </section>
+
+    <section class="menu-container" aria-label="Meniul principal">
+      <a class="menu-card" href="alcool.html">
+        <h3>Alcool</h3>
+        <p>Ce este, semne, consecințe și cum poți cere ajutor.</p>
+      </a>
+
+      <a class="menu-card" href="tutun.html">
+        <h3>Tutun</h3>
+        <p>De ce nicotina creează dependență și ce efecte are fumatul.</p>
+      </a>
+
+      <a class="menu-card" href="droguri.html">
+        <h3>Droguri</h3>
+        <p>Tipuri de droguri, riscuri și ce urmează după consum.</p>
+      </a>
+
+      <a class="menu-card" href="jocuri.html">
+        <h3>Jocuri de noroc</h3>
+        <p>Cum funcționează mecanismele jocurilor și cum devii dependent.</p>
+      </a>
+
+      <a class="menu-card" href="internet.html">
+        <h3>Dependența de Internet</h3>
+        <p>Semne, efecte și strategii practice pentru a reduce timpul online.</p>
+      </a>
+    </section>
+
+    <section class="help-wrap">
+      <a class="help-btn" href="ajutor.html">Am nevoie de ajutor</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Proiect școlar — EuDecid • Informație educațională</p>
+  </footer>
+
+  <!-- Diagnostic: afișează doar dacă CSS nu se încarcă (vizibil, ușor). Șterge dacă vrei. -->
+  <noscript>
+    <div style="background:#ffe8cc;color:#333;padding:8px;border-radius:6px;margin:16px auto;max-width:900px;text-align:center;">
+      Dacă vezi acest mesaj înseamnă că JavaScript e dezactivat — nu afectează CSS-ul.
+    </div>
+  </noscript>
+
+</body>
+</html>

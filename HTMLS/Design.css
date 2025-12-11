@@ -1,0 +1,368 @@
+/* FONT MODERN */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #292929 0, #050505 60%);
+    color: #f4f4f4;
+    min-height: 100vh;
+
+    /* ANIMAȚIE LA INTRAREA PE PAGINĂ */
+    animation: pageFadeIn 0.5s ease-out;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+    text-align: center;
+    padding: 40px 20px 10px;
+}
+
+.header-inner h1 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    margin-top: 6px;
+    font-size: 16px;
+    color: #c4c4c4;
+}
+
+/* ===== MAIN WRAP ===== */
+.main-wrap {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px 40px;
+}
+
+/* ===== INTRO BOX ===== */
+.intro-box {
+    background: rgba(255,255,255,0.06);
+    border-radius: 20px;
+    padding: 25px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.intro-box h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #ffdd99;
+}
+
+.intro-box p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #e0e0e0;
+}
+
+.intro-box .lead {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* ===== MENIU – CARDURI-BUTOANE ===== */
+
+/* scoatem orice stil default de link */
+.menu-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* grid pentru carduri */
+.menu-container {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* cardul-buton propriu-zis (este <a>) */
+.menu-card {
+    display: block;
+    background: linear-gradient(135deg, #262626, #3a3a3a);
+    border-radius: 18px;
+    padding: 18px 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.menu-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #ffdd99;
+}
+
+.menu-card p {
+    font-size: 15px;
+    color: #d0d0d0;
+}
+
+/* efect hover – se ridică și luminează */
+.menu-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.85);
+    background: linear-gradient(135deg, #3f3f3f, #555555);
+}
+
+/* ===== CARD „DEPENDENȚA DE INTERNET” CENTRAT ===== */
+/* ultimul card din .menu-container (Internet) */
+.menu-container a.menu-card:last-child {
+    grid-column: span 2;      /* ocupă ambele coloane */
+    justify-self: center;     /* centrat pe rând */
+    max-width: 500px;         /* aceeași lățime ca ceilalți */
+}
+
+/* ===== BUTON „AM NEVOIE DE AJUTOR” ===== */
+.help-wrap {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.help-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 999px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(135deg, #b00000, #ff2222);
+    border: 1px solid rgba(255,80,80,0.7);
+    box-shadow: 0 10px 26px rgba(255,0,0,0.45);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.help-btn:hover {
+    transform: translateY(-4px) scale(1.04);
+    background: linear-gradient(135deg, #ff3333, #ff5555);
+    box-shadow: 0 14px 32px rgba(255,0,0,0.6);
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+    text-align: center;
+    padding: 10px 10px 25px;
+    font-size: 13px;
+    color: #a8a8a8;
+}
+
+/* ===== ANIMAȚII TRANZIȚIE PAGINI ===== */
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pageFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+body.page-fade-out {
+    animation: pageFadeOut 0.4s ease-in forwards;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 720px) {
+    .menu-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* ========================= */
+/*       SUBPAGINI (INFO)    */
+/* ========================= */
+
+body.subpage {
+    background: radial-gradient(circle at top, #151515 0, #050505 60%);
+    color: #f4f4f4;
+    padding: 40px 20px;
+}
+
+/* header-ul de pe subpagini */
+body.subpage header {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    text-align: left;
+}
+
+body.subpage header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* butonul Înapoi */
+.back-btn {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(135deg, #3b3b3b, #555555);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 5px 14px rgba(0,0,0,0.6);
+    transition: 0.25s ease;
+}
+
+.back-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #555555, #777777);
+}
+
+/* cardul principal de conținut */
+.info-page {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 18px;
+    padding: 25px 28px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+    border-top: 4px solid #888; /* va fi suprascris de temele de mai jos */
+}
+
+.info-page h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.info-page h3 {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #ffdd99;
+}
+
+.info-page p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #e0e0e0;
+    margin-bottom: 12px;
+}
+
+.info-page ul {
+    margin-top: 8px;
+    padding-left: 20px;
+}
+
+.info-page li {
+    margin-bottom: 6px;
+}
+
+/* casete pentru liste/sectiuni importante */
+.info-page ul {
+    list-style: disc;
+}
+
+.info-page ul.highlight {
+    list-style: none;
+    padding: 15px 18px;
+    border-radius: 14px;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.16);
+}
+
+/* ========================= */
+/*   TEME PE FIECARE PAGINĂ  */
+/* ========================= */
+
+/* ALCOOL – roșu */
+body.alcool .info-page {
+    border-top-color: #ff6666;
+    box-shadow: 0 12px 32px rgba(255,80,80,0.35);
+}
+body.alcool header h1 { color: #ffb3b3; }
+
+/* TUTUN – verde */
+body.tutun .info-page {
+    border-top-color: #9acd32;
+    box-shadow: 0 12px 32px rgba(154,205,50,0.35);
+}
+body.tutun header h1 { color: #d6ff9c; }
+
+/* DROGURI – mov */
+body.droguri .info-page {
+    border-top-color: #c792ff;
+    box-shadow: 0 12px 32px rgba(199,146,255,0.4);
+}
+body.droguri header h1 { color: #e3c5ff; }
+
+/* JOCURI DE NOROC – galben-auriu */
+body.jocuri .info-page {
+    border-top-color: #ffd54f;
+    box-shadow: 0 12px 32px rgba(255,213,79,0.4);
+}
+body.jocuri header h1 { color: #ffe58f; }
+
+/* INTERNET – albastru */
+body.internet .info-page {
+    border-top-color: #4da6ff;
+    box-shadow: 0 12px 32px rgba(77,166,255,0.4);
+}
+body.internet header h1 { color: #a8d4ff; }
+
+/* AJUTOR – turcoaz */
+body.ajutor .info-page {
+    border-top-color: #33ffbb;
+    box-shadow: 0 12px 32px rgba(51,255,187,0.4);
+}
+body.ajutor header h1 { color: #9fffe0; }
+
+/* Textarea din formularul de ajutor – să NU mai poată fi întinsă cu mouse-ul */
+.info-page textarea {
+    resize: none;      /* nu mai poți trage de colț */
+    overflow-y: auto;  /* dacă textul e mult, apare scroll în jos */
+    max-width: 100%;   /* nu depășește cardul */
+}
+/* Stil pentru dropdown, eliminăm săgeata albă default */
+.info-page select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: #1c1c1c;
+    color: #e8e8e8;
+    border: 1px solid #3a3a3a;
+    padding-right: 35px; /* spațiu pentru iconița noastră */
+    position: relative;
+}
+
+/* arrow custom pentru select */
+.info-page select::-ms-expand {
+    display: none;
+}
+
+/* container pentru iconița de săgeată */
+.info-page select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23aaa' height='24' width='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+
+

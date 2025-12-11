@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Jocuri de noroc – EuDecid</title>
+    <link rel="stylesheet" href="Design.css">
+</head>
+
+<body class="subpage jocuri">
+
+<header>
+    <h1>Jocurile de noroc – Iluzia controlului</h1>
+    <a class="back-btn" href="Main.html">Înapoi la pagina principală</a>
+</header>
+
+<section class="info-page">
+    <h2>Ce este dependența de jocuri de noroc?</h2>
+    <p>
+        Dependența de jocuri de noroc nu implică o substanță, ci un comportament compulsiv.
+        Persoana simte o nevoie constantă de a juca, indiferent de consecințe. De multe ori,
+        jocurile pornesc ca distracție, dar se transformă treptat în obsesie.
+    </p>
+
+    <h3>Semne ale dependenței</h3>
+    <ul class="highlight">
+        <li>Dorința de a juca sume tot mai mari.</li>
+        <li>Mințirea familiei sau a prietenilor despre bani sau timp.</li>
+        <li>Tentativa de a „recupera” pierderile prin și mai mult joc.</li>
+        <li>Neglijarea școlii, muncii și relațiilor personale.</li>
+    </ul>
+
+    <h3>Consecințe</h3>
+    <ul class="highlight">
+        <li>Datorii uriașe și probleme financiare serioase.</li>
+        <li>Depresie, anxietate, izolare și rușine.</li>
+        <li>Risc crescut de comportamente autodistructive.</li>
+        <li>Distrugerea încrederii în familie și prietenii apropiați.</li>
+    </ul>
+
+    <p>
+        Jocurile sunt create pentru a te face să pierzi controlul, nu să câștigi.
+        Mecanismele lor sunt programate pentru a te face să revii mereu, chiar și atunci
+        când pierzi. Conștientizarea acestui lucru este un pas important spre protejarea ta.
+    </p>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll('a[href$=".html"]');
+
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const url = this.href;
+
+      document.body.classList.add("page-fade-out");
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 400);
+    });
+  });
+});
+</script>
+
+</body>
+</html>
+
