@@ -1,0 +1,164 @@
+ 
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajutor – EuDecid</title>
+    <link rel="stylesheet" href="Design.css">
+</head>
+
+<body class="subpage ajutor">
+
+<header>
+    <h1>Am nevoie de ajutor</h1>
+    <a class="back-btn" href="Main.html">Înapoi la pagina principală</a>
+</header>
+
+<section class="info-page">
+    <h2>Nu ești singur.</h2>
+    <p>
+        A cere ajutor nu este un semn de slăbiciune, ci de curaj. Dependențele pot afecta
+        pe oricine, indiferent de vârstă sau situație. Important este să faci primul pas:
+        să recunoști că ai nevoie de sprijin.
+    </p>
+
+    <h3>În situații grave sau de urgență</h3>
+    <ul class="highlight">
+        <li>Dacă cineva este în pericol imediat (tentativă de suicid, pierderea cunoștinței, supradoză), sună la <strong>112</strong> sau <strong>0269 577 316</strong>.</li>
+        <li>Nu lăsa persoana singură.</li>
+        <li>Comunică clar operatorului ce se întâmplă.</li>
+    </ul>
+
+    <h3>Cu cine poți vorbi?</h3>
+    <ul class="highlight">
+        <li>Un părinte, profesor sau adult de încredere.</li>
+        <li>Consilierul sau psihologul școlii.</li>
+        <li>Medic de familie sau specialist în adicții.</li>
+    </ul>
+</section>
+
+<section class="info-page">
+    <h2>Formular de programare la consiliere</h2>
+    <p>Completează câmpurile de mai jos pentru a crea o cerere.</p>
+
+    <form id="helpForm">
+
+        <!-- NUME -->
+        <div style="margin-bottom: 12px; text-align:left;">
+            <label for="name"><strong>Nume complet</strong></label><br>
+            <input type="text" id="name" name="name" required
+                   style="width:100%; padding:10px; border-radius:10px; border:1px solid #3a3a3a;
+                          margin-top:4px; background:#1c1c1c; color:#e8e8e8;">
+        </div>
+
+        <!-- EMAIL -->
+        <div style="margin-bottom: 12px; text-align:left;">
+            <label for="email"><strong>Email</strong></label><br>
+            <input type="email" id="email" name="email" required
+                   style="width:100%; padding:10px; border-radius:10px; border:1px solid #3a3a3a;
+                          margin-top:4px; background:#1c1c1c; color:#e8e8e8;">
+        </div>
+
+        <!-- TELEFON -->
+        <div style="margin-bottom: 12px; text-align:left;">
+            <label for="phone"><strong>Număr de telefon</strong> (opțional)</label><br>
+            <input type="tel" id="phone" name="phone"
+                   placeholder="07xx xxx xxx"
+                   style="width:100%; padding:10px; border-radius:10px; border:1px solid #3a3a3a;
+                          margin-top:4px; background:#1c1c1c; color:#e8e8e8;">
+        </div>
+
+        <!-- TIP DEPENDENTA -->
+        <div style="margin-bottom: 12px; text-align:left;">
+            <label for="type"><strong>Tipul dependenței</strong></label><br>
+            <select id="type" name="type" required
+                    style="width:100%; padding:10px; border-radius:10px; border:1px solid #3a3a3a;
+                           margin-top:4px; background:#1c1c1c; color:#e8e8e8;">
+                <option value="">Alege o opțiune...</option>
+                <option value="alcool">Alcool</option>
+                <option value="tutun">Tutun</option>
+                <option value="droguri">Droguri</option>
+                <option value="jocuri">Jocuri de noroc</option>
+                <option value="internet">Dependența de internet</option>
+                <option value="alta">Alt tip de dependență</option>
+            </select>
+        </div>
+
+        <!-- MESAJ -->
+        <div style="margin-bottom: 12px; text-align:left;">
+            <label for="message"><strong>Mesaj / descriere situație</strong></label><br>
+            <textarea id="message" name="message" rows="4" required
+                      style="width:100%; padding:10px; border-radius:10px; border:1px solid #3a3a3a;
+                             margin-top:4px; background:#1c1c1c; color:#e8e8e8;"></textarea>
+        </div>
+
+        <!-- CONTACT PREFERENCE -->
+        <div style="margin-bottom: 12px; text-align:left;">
+            <label for="contactPref"><strong>Preferință de contact</strong></label><br>
+            <select id="contactPref" name="contactPref" required
+                    style="width:100%; padding:10px; border-radius:10px; border:1px solid #3a3a3a;
+                           margin-top:4px; background:#1c1c1c; color:#e8e8e8;">
+                <option value="">Alege o opțiune...</option>
+                <option value="email">Email</option>
+                <option value="telefon">Telefon</option>
+                <option value="online">Sesiune online (video/chat)</option>
+            </select>
+        </div>
+
+        <!-- SUBMIT -->
+        <button type="submit"
+                style="margin-top:10px; padding:12px 26px; border-radius:999px; border:none; cursor:pointer;
+                       background:linear-gradient(135deg,#00c896,#00e6b3); color:#000; font-weight:700;">
+            Trimite cererea
+        </button>
+
+        <a id="emailLink"
+           href="mailto:consilier@eudecid.ro?subject=Cerere%20de%20ajutor"
+           style="display:inline-block; margin-left:15px; margin-top:12px; color:#9fffe0; text-decoration:underline;">
+            Sau trimite direct un email
+        </a>
+
+        <p id="jsonPreview" style="margin-top:15px; font-size:14px; color:#b0ffda; word-break:break-word;"></p>
+    </form>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // tranzitie fade intre pagini (fara mailto)
+  const links = document.querySelectorAll('a[href$=".html"]');
+
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
+      if (this.getAttribute('href').startsWith('mailto:')) return;
+      e.preventDefault();
+      const url = this.href;
+      document.body.classList.add("page-fade-out");
+      setTimeout(() => { window.location.href = url; }, 400);
+    });
+  });
+
+  // FORMULAR -> JSON (simulare)
+  const form = document.getElementById("helpForm");
+  const jsonPreview = document.getElementById("jsonPreview");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const data = {
+      name: document.getElementById("name").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      dependencyType: document.getElementById("type").value,
+      message: document.getElementById("message").value.trim(),
+      contactPreference: document.getElementById("contactPref").value,
+      timestamp: new Date().toISOString()
+    };
+
+    jsonPreview.textContent = "JSON generat (simulare): " + JSON.stringify(data, null, 2);
+    alert("Cererea ta a fost preluată (simulare).");
+  });
+});
+</script>
+
+</body>
+</html>

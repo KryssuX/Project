@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Dependența de Internet – EuDecid</title>
+    <link rel="stylesheet" href="Design.css">
+</head>
+
+<body class="subpage internet">
+
+<header>
+    <h1>Dependența de internet – O problemă a generației moderne</h1>
+    <a class="back-btn" href="Main.html">Înapoi la pagina principală</a>
+</header>
+
+<section class="info-page">
+    <h2>Ce este dependența de internet?</h2>
+    <p>
+        Dependența de internet este o stare în care persoana nu mai poate controla
+        timpul petrecut online. Rețelele sociale, jocurile online și clipurile scurte
+        sunt create special pentru a te ține cât mai mult conectat și a-ți atrage atenția.
+    </p>
+
+    <h3>Semne ale dependenței</h3>
+    <ul class="highlight">
+        <li>Petrecerea a peste 4–6 ore online zilnic, în afara timpului de școală/muncă.</li>
+        <li>Anxietate, nervozitate sau plictiseală extremă când nu ai acces la internet.</li>
+        <li>Neglijarea somnului, igienei sau alimentației din cauza „încă unui episod” sau „încă unui joc”.</li>
+        <li>Scăderea performanțelor școlare sau profesionale.</li>
+    </ul>
+
+    <h3>Consecințe</h3>
+    <ul class="highlight">
+        <li>Scăderea concentrării și a memoriei.</li>
+        <li>Izolare socială, preferi ecranul în locul oamenilor reali.</li>
+        <li>Creșterea anxietății și chiar depresie, din cauza comparațiilor cu alții online.</li>
+        <li>Lipsa motivației și reducerea interesului pentru activități reale (sport, hobby-uri, plimbări).</li>
+    </ul>
+
+    <p>
+        Internetul este un instrument foarte util, dar abuzul poate deveni o capcană
+        digitală greu de observat la început. Important este să păstrezi echilibrul
+        între lumea online și cea reală.
+    </p>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll('a[href$=".html"]');
+
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const url = this.href;
+
+      document.body.classList.add("page-fade-out");
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 400);
+    });
+  });
+});
+</script>
+
+</body>
+</html>
